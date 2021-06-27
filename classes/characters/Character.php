@@ -27,5 +27,10 @@ abstract class Character
         return $this;
     }
 
+    public function getClass()
+    {
+        return get_class($this);
+    }
+
     
 }

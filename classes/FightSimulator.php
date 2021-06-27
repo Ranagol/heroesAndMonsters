@@ -43,12 +43,18 @@ class FightSimulator
 
     public function checkWhoIsAlive(Character $firstAttackingCharacter, Character $lastAttackingCharacter)
     {
-        if ($firstAttackingCharacter->getHealth() > 0) {
-            echo '$firstAttackingCharacter has won!<br>';
-        } elseif ($lastAttackingCharacter->getHealth() > 0) {
-            echo '$lastAttackingCharacter has won!<br>';
-        } else {
-            throw new CustomException('There is an issue regarding fight simulation and health points.');
+        try {
+            if ($firstAttackingCharacter->getHealth() > 0) {
+                echo $firstAttackingCharacter->getClass() . ' has won in a fight against' . $lastAttackingCharacter->getClass() . '!<br>';
+            } elseif ($lastAttackingCharacter->getHealth() > 0) {
+                echo $lastAttackingCharacter->getClass() . ' has won in a fight against' . $firstAttackingCharacter->getClass() . '!<br>';
+            } else {
+                throw new CustomException('There is an issue regarding fight simulation and health points.');
+            }
+        } catch (CustomException $error) {
+            echo 'My error message: ' . $error->getMessage() . '<br>';
+            echo 'The error was triggered in this file: ' . $error->getFile(). '<br>';
+            echo 'The error was triggered on this line: ' . $error->getLine(). '<br>';
         }
     }
 
