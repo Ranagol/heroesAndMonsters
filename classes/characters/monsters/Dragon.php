@@ -3,12 +3,13 @@
 namespace classes\characters\monsters;
 
 use classes\Helper;
+use classes\characters\Character;
 use classes\characters\heroes\Hero;
 use classes\characters\monsters\Monster;
 
 class Dragon extends Monster
 {
-    public function attack(Hero $hero)
+    public function attack(Character $character)
     {
         $randomNumber = Helper::generateRandomInteger(1,2);
         if ($randomNumber = 1) {

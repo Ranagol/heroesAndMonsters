@@ -11,6 +11,11 @@ abstract class Hero extends Character
     protected $activeWeapon;
     protected $maxNumberOfWeapons = 2;
 
+    public function attack(Character $character)
+    {
+        $monster->setHealth($monster->getHealth() - $this->getActiveWeapon()->getDamage());
+    }
+
     public function collectWeapon(Weapon $weapon)
     {
         $this->setActiveWeapon($weapon);

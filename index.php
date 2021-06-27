@@ -4,6 +4,7 @@ require __DIR__ .'/vendor/autoload.php';
 
 use classes\Helper;
 use classes\Logger;
+use classes\FightSimulator;
 use classes\factories\Factory;
 use classes\exceptions\CustomException;
 
@@ -33,5 +34,7 @@ $droppedLance = $swordsman2->dropActiveWeapon();
 $swordsman1->collectWeapon($droppedLance);
 $swordsman2->collectWeapon($droppedSword);
 
+//FIGHTING
+$fightSimulator = new FightSimulator($swordsman1, $dragon);
 
 
