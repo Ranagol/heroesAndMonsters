@@ -3,11 +3,26 @@
 namespace classes\characters\heroes;
 
 use classes\characters\Character;
+use classes\weapons\Weapon;
 
 abstract class Hero extends Character
 {
     protected $bag = [];
     protected $activeWeapon;
+    protected $maxNumberOfWeapons = 2;
+
+    public function collectWeapon(Weapon $weapon)
+    {
+        $this->setActiveWeapon($weapon);
+    }
+
+    public function dropActiveWeapon()
+    {
+        $weaponToDrop = $this->getActiveWeapon();
+        $this->setActiveWeapon(null);
+
+        return $weaponToDrop;
+    }
 
     /**
      * Get the value of bag
@@ -45,6 +60,26 @@ abstract class Hero extends Character
     public function setActiveWeapon($activeWeapon)
     {
         $this->activeWeapon = $activeWeapon;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of maxNumberOfWeapons
+     */ 
+    public function getMaxNumberOfWeapons()
+    {
+        return $this->maxNumberOfWeapons;
+    }
+
+    /**
+     * Set the value of maxNumberOfWeapons
+     *
+     * @return  self
+     */ 
+    public function setMaxNumberOfWeapons($maxNumberOfWeapons)
+    {
+        $this->maxNumberOfWeapons = $maxNumberOfWeapons;
 
         return $this;
     }

@@ -15,8 +15,11 @@ class Factory
     public function createGameElements()
     {
         $gameElements = [];
-        $swordsman = new Swordsman();
-        $gameElements['swordsman'] = $swordsman;
+        $swordsman1 = new Swordsman();
+        $gameElements['swordsman1'] = $swordsman1;
+        $swordsman2 = new Swordsman();
+        $gameElements['swordsman2'] = $swordsman2;
+
         $wizard = new Wizard();
         $gameElements['wizard'] = $wizard;
         $sword = new Sword();
