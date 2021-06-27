@@ -58,10 +58,6 @@ class FightSimulator
         }
     }
 
-
-
-
-
     /**
      * Get the value of firstAttackingCharacter
      */ 

@@ -14,11 +14,13 @@ abstract class Hero extends Character
     public function attack(Character $character)
     {
         $monster->setHealth($monster->getHealth() - $this->getActiveWeapon()->getDamage());
+        echo $this->getClass() . ' has attacked ' . $character->getClass() . 'with ' . $weapon->getClass() . '<br>';
     }
 
     public function collectWeapon(Weapon $weapon)
     {
         $this->setActiveWeapon($weapon);
+        echo $this->getClass() . ' has picked up the ' . $weapon->getClass() . '<br>';
     }
 
     public function dropActiveWeapon()
