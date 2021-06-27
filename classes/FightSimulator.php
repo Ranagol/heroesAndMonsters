@@ -5,6 +5,7 @@ namespace classes;
 use classes\Helper;
 use classes\characters\Character;
 use classes\characters\heroes\Hero;
+use classes\exceptions\CustomException;
 use classes\characters\monsters\Monster;
 
 class FightSimulator
